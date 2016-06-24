@@ -10,5 +10,8 @@
   "bugs": {
     "url": "https://github.com/n2liquid/xuxu-maker/issues"
   },
-  "homepage": "https://github.com/n2liquid/xuxu-maker#readme"
+  "homepage": "https://github.com/n2liquid/xuxu-maker#readme",
+  "dependencies": {
+    "glob": "^7.0.5"
+  }
 }
