@@ -12,6 +12,7 @@
   },
   "homepage": "https://github.com/n2liquid/xuxu-maker#readme",
   "dependencies": {
-    "glob": "^7.0.5"
+    "glob": "^7.0.5",
+    "hyperscript": "^1.4.7"
   }
 }
