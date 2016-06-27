@@ -1,0 +1,25 @@
+.wgtTilemap {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: calc(var(--wgtTilemapWidth) * var(--wgtTileWidth));
+    height: calc(var(--wgtTilemapHeight) * var(--wgtTileHeight));
+
+    image-rendering: pixelated;
+}
+
+.wgtTile {
+    position: absolute;
+
+    left: calc(var(--wgtTileX) * var(--wgtTileWidth));
+    top: calc(var(--wgtTileY) * var(--wgtTileHeight));
+
+    width: var(--wgtTileWidth);
+    height: var(--wgtTileHeight);
+
+    background-image: var(--wgtTilesetUrl);
+    background-position-x: calc(-1 * var(--wgtTilesetX) * var(--wgtTileWidth));
+    background-position-y: calc(-1 * var(--wgtTilesetY) * var(--wgtTileHeight));
+}
