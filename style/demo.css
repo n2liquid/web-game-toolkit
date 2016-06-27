@@ -1,0 +1,15 @@
+body {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background-image: url('../data/bg.png');
+}
+
+.wgt {
+    box-sizing: content-box;
+
+    border: 10px solid #1d1d1d;
+    border-radius: 6px;
+}
