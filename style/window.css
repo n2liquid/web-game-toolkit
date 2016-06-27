@@ -1,0 +1,55 @@
+.wgtWindow {
+    display: inline-block;
+
+    border-image: url(../data/system/windowBorders.png) 7;
+    border-style: solid;
+
+    padding: 6px 8px;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    color: white;
+}
+
+.wgtTopWindow,
+.wgtTopLeftWindow,
+.wgtTopRightWindow,
+.wgtBottomWindow,
+.wgtBottomLeftWindow,
+.wgtBottomRightWindow {
+    position: absolute;
+
+    --cornerMargin: 16px;
+}
+
+.wgtTopWindow {
+    left: var(--cornerMargin);
+    right: var(--cornerMargin);
+    top: var(--cornerMargin);
+}
+
+.wgtTopLeftWindow {
+    left: var(--cornerMargin);
+    top: var(--cornerMargin);
+}
+
+.wgtTopRightWindow {
+    right: var(--cornerMargin);
+    top: var(--cornerMargin);
+}
+
+.wgtBottomWindow {
+    left: var(--cornerMargin);
+    right: var(--cornerMargin);
+    bottom: var(--cornerMargin);
+}
+
+.wgtBottomLeftWindow {
+    left: var(--cornerMargin);
+    bottom: var(--cornerMargin);
+}
+
+.wgtBottomRightWindow {
+    right: var(--cornerMargin);
+    bottom: var(--cornerMargin);
+}
