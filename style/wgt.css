@@ -1,0 +1,10 @@
+.wgt {
+    position: relative;
+
+    width: var(--wgtWidth);
+    height: var(--wgtHeight);
+
+    background-color: black;
+
+    overflow: hidden;
+}
