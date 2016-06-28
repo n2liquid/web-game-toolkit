@@ -1,0 +1,49 @@
+.wgtSprite {
+    position: absolute;
+
+    left: calc(var(--wgtX) * var(--wgtTileWidth));
+    top: calc(var(--wgtY) * var(--wgtTileHeight));
+
+    width: var(--wgtTileWidth);
+    height: var(--wgtTileHeight);
+}
+
+.wgtSpriteInternal {
+    position: absolute;
+
+    left: calc(-1 * var(--wgtSpritesetOriginX));
+    top: calc(-1 * var(--wgtSpritesetOriginY));
+
+    width: var(--wgtSpritesetFrameWidth);
+    height: var(--wgtSpritesetFrameHeight);
+
+    background-image: var(--wgtSpritesetUrl);
+
+    background-position-x: 0;
+
+    background-position-y: calc(
+        var(--wgtSpritesetRow) * var(--wgtSpritesetFrameHeight)
+    );
+}
+
+@keyframes wgtSpritesetFrames {
+    to {
+        background-position-x: calc(
+            -1 * var(--wgtSpritesetFrameCount) * var(--wgtSpritesetFrameWidth)
+        );
+    }
+}
+
+.wgtSprite.wgtAnimate .wgtSpriteInternal {
+    animation: wgtSpritesetFrames steps(var(--wgtSpritesetFrameCount), end) infinite;
+
+    animation-duration: var(--wgtSpritesetAnimDuration);
+
+    animation-delay: calc(
+        -1 * var(--wgtSpritesetAnimDuration) / var(--wgtSpritesetFrameCount)
+    );
+}
+
+.wgtSprite.wgtWalking {
+    transition: var(--wgtWalkDuration) linear left, var(--wgtWalkDuration) linear top;
+}

@@ -2,6 +2,7 @@
 
 wgt.db = {
     tileset: {},
+    spriteset: {},
 };
 
 }

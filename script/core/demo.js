@@ -18,6 +18,14 @@ wgt.tilemap.createTile($tilemap, 9, 2, 3, 1);
 wgt.tilemap.createTile($tilemap, 8, 3, 2, 2);
 wgt.tilemap.createTile($tilemap, 9, 3, 3, 2);
 
+wgt.tilemap.createTile($tilemap, 8, 2, 5, 1);
+wgt.tilemap.createTile($tilemap, 9, 2, 6, 1);
+wgt.tilemap.createTile($tilemap, 8, 3, 5, 2);
+wgt.tilemap.createTile($tilemap, 9, 3, 6, 2);
+
+let $demon = wgt.sprite.create($tilemap, 1, 2, 4);
+let $siren = wgt.sprite.create($tilemap, 2, 6, 4);
+
 let $uiLayer = wgt.layer.create($wgt)
     .addClass('uiLayer');
 
