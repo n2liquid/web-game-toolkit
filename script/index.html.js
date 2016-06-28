@@ -19,13 +19,11 @@ glob.sync(rootDir + '/style/**/*.css').forEach(path => {
     }).outerHTML);
 });
 
-console.log(h('script', {
-    src: 'https://code.jquery.com/jquery-3.0.0.js',
-}).outerHTML);
-
-console.log(h('script', {
-    src: 'https://cdnjs.cloudflare.com/ajax/libs/q.js/1.4.1/q.min.js',
-}).outerHTML);
+glob.sync(rootDir + '/script/deps/**/*.js').forEach(path => {
+    console.log(h('script', {
+        src: getRelPath(rootDir, path),
+    }).outerHTML);
+});
 
 glob.sync(rootDir + '/script/lib/**/*.js').forEach(path => {
     console.log(h('script', {
