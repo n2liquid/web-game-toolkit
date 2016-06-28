@@ -1,6 +1,6 @@
 'use strict'; {
 
-wgt.pad = (side, val, len, char_) => {
+wgt.strPad = (side, val, len, char_) => {
     val = val.toString();
 
     len -= val.length;

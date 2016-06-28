@@ -11,7 +11,7 @@ wgt.watchDom({
         let tsid = parseInt($el.attr('wgt-tileset-id'));
         let ts = wgt.db.tileset[tsid];
 
-        let tsFileName = wgt.pad('left', tsid, 4, 0);
+        let tsFileName = wgt.strPad('left', tsid, 4, 0);
 
         wgt.cssVar.set(
             el, 'wgtTilesetUrl', 'url("' +

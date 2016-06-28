@@ -23,7 +23,7 @@ wgt.watchDom({
         }
 
         if(ss.name !== 'null') {
-            let ssFileName = wgt.pad('left', ssid, 4, 0);
+            let ssFileName = wgt.strPad('left', ssid, 4, 0);
 
             wgt.cssVar.set(
                 el, 'wgtSpritesetUrl', 'url("' +
