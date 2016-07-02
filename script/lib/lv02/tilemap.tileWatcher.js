@@ -6,8 +6,8 @@ wgt.watchDom({
     is: '.wgtTile',
 
     fn: (el, ev) => {
-        let tsx = wgt.cssVar.get(el, 'wgtTilesetX', 'int');
-        let tsy = wgt.cssVar.get(el, 'wgtTilesetY', 'int');
+        const tsx = wgt.cssVar.get(el, 'wgtTilesetX', 'int');
+        const tsy = wgt.cssVar.get(el, 'wgtTilesetY', 'int');
 
         if(
             el.oldTsx === tsx
@@ -19,10 +19,13 @@ wgt.watchDom({
         el.oldTsx = tsx;
         el.oldTsy = tsy;
 
-        let $el = $(el);
+        const $el = $(el);
 
-        let tsid = parseInt($el.closest('.wgtTilemap').attr('wgt-tileset-id'));
-        let ts = wgt.db.tileset[tsid];
+        const tsid = parseInt(
+            $el.closest('.wgtTilemap').attr('wgt-tileset-id')
+        );
+
+        const ts = wgt.db.tileset[tsid];
 
         if(ts.highTiles.includes(`${tsx},${tsy}`)) {
             $el.css('z-index', 'calc(var(--wgtY) + 1)');

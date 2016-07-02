@@ -1,8 +1,8 @@
 'use strict'; {
 
-let id = parseInt(wgt.getFileName());
+const id = parseInt(wgt.getFileName());
 
-let mod = wgt.db.tileset[id] = {};
+const mod = wgt.db.tileset[id] = {};
 
 mod.name = 'Demo';
 
@@ -11,10 +11,10 @@ mod.highTiles = [
     '1,2', '3,2', '8,2', '9,2', '10,2', '11,2', '12,2',
 ];
 
-let O = 'O';
-let X = 'X';
-let LR = 'LR';
-let LRD = 'LRD';
+const O = 'O';
+const X = 'X';
+const LR = 'LR';
+const LRD = 'LRD';
 
 mod.collisionFlags = [
     [O, LR, LR, LR, LR, X, O, O, X, X, O, O, O, O, O, O, O],

@@ -3,7 +3,7 @@
 wgt.overloaded = (args, specs) => {
     let spec;
 
-    for(let key in specs) {
+    for(const key in specs) {
         if(args.length === parseInt(key)) {
             spec = specs[key];
             break;
@@ -20,7 +20,7 @@ wgt.overloaded = (args, specs) => {
     }
 
     return (() => {
-        let ret = {};
+        const ret = {};
 
         for(var i in spec) {
             ret[spec[i]] = args[i];

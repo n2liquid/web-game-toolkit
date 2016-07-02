@@ -1,14 +1,14 @@
 'use strict'; {
 
-let mod = wgt.cssVar;
+const mod = wgt.cssVar;
 
 mod.set = function() {
-    let args = wgt.overloaded(arguments, {
+    const args = wgt.overloaded(arguments, {
         2: ['el', 'hash'],
         3: ['el', 'name', 'val'],
     });
 
-    let el = args.el;
+    const el = args.el;
 
     if(args.hash) {
         Object.keys(args.hash).forEach(
@@ -18,16 +18,16 @@ mod.set = function() {
         return;
     }
 
-    let { name, val } = args;
+    const { name, val } = args;
 
-    let originalStyle = el.style.cssText.trim();
+    const originalStyle = el.style.cssText.trim();
 
     if(originalStyle && !originalStyle.endsWith(';')) {
         originalStyle += ';';
     }
 
-    let re = new RegExp(`((^| *;| )--${name} *): *([^;$]+)`, 'g');
-    let reRes = re.exec(originalStyle);
+    const re = new RegExp(`((^| *;| )--${name} *): *([^;$]+)`, 'g');
+    const reRes = re.exec(originalStyle);
 
     if(!reRes) {
         el.style = originalStyle + ' --' + name + ': ' + val + ';';

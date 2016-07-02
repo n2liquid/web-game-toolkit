@@ -1,6 +1,6 @@
 'use strict'; {
 
-let playerDirections = {
+const playerDirections = {
     0: 'none',
 };
 

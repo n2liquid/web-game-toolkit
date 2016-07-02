@@ -1,12 +1,12 @@
 'use strict'; {
 
-let initialHash = location.hash;
+const initialHash = location.hash;
 
 $(() => {
     $.getScript(`script/core/${initialHash.slice(1)}`);
 });
 
-let reloading = false;
+const reloading = false;
 
 (function thisFn() {
     if(reloading) {

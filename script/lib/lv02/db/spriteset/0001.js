@@ -1,8 +1,8 @@
 'use strict'; {
 
-let id = parseInt(wgt.getFileName());
+const id = parseInt(wgt.getFileName());
 
-let mod = wgt.db.spriteset[id] = {
+const mod = wgt.db.spriteset[id] = {
     name: 'DemonFighter',
 
     frameWidth: 111,

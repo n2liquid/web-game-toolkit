@@ -11,7 +11,7 @@ wgt.strPad = (side, val, len, char_) => {
 
     char_ = char_.toString().charAt(0);
 
-    let padStr = new Array(len + 1).join(char_);
+    const padStr = new Array(len + 1).join(char_);
 
     switch(side) {
         case 'left':

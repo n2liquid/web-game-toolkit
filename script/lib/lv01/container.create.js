@@ -1,14 +1,14 @@
 'use strict'; {
 
-let mod = wgt.container;
+const mod = wgt.container;
 
 mod.create = ($parent, w, h) => {
     $parent = $($parent);
 
-    let $el = $('<div>')
+    const $el = $('<div>')
         .addClass('wgt');
 
-    let cssVars = {
+    const cssVars = {
         wgtWidth: w,
         wgtHeight: h,
         wgtTileWidth: '32px',

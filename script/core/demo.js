@@ -1,12 +1,12 @@
 'use strict'; {
 
-let $wgt = wgt.container.create('body', 640, 480);
+const $wgt = wgt.container.create('body', 640, 480);
 
-let $mapLayer = wgt.layer.create($wgt)
+const $mapLayer = wgt.layer.create($wgt)
     .addClass('mapLayer')
     .css('zoom', 2);
 
-let $tilemap = wgt.tilemap.create($mapLayer, 30, 25, 1);
+const $tilemap = wgt.tilemap.create($mapLayer, 30, 25, 1);
 
 wgt.cssVar.set($tilemap[0], {
     wgtBgTilesetX: 6,
@@ -28,7 +28,7 @@ wgt.sprite.create($tilemap, 1, 2, 4)
 
 wgt.sprite.create($tilemap, 2, 6, 4);
 
-let $uiLayer = wgt.layer.create($wgt)
+const $uiLayer = wgt.layer.create($wgt)
     .addClass('uiLayer');
 
 wgt.window.create($uiLayer)

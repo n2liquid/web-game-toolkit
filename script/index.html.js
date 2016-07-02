@@ -1,13 +1,13 @@
 'use strict';
 
-let glob = require('glob');
+const glob = require('glob');
 
-let path = require('path');
-let getRelPath = path.relative;
+const path = require('path');
+const getRelPath = path.relative;
 
-let h = require('hyperscript');
+const h = require('hyperscript');
 
-let rootDir = __dirname + '/..';
+const rootDir = __dirname + '/..';
 
 console.log('<!doctype html>');
 console.log('<meta charset="utf-8">');

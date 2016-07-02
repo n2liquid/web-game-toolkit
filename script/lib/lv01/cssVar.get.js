@@ -1,6 +1,6 @@
 'use strict'; {
 
-let mod = wgt.cssVar;
+const mod = wgt.cssVar;
 
 mod.get = (el, name, type) => {
     let val = el.style.getPropertyValue(`--${name}`);

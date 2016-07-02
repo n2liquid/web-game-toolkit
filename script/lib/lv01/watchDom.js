@@ -1,12 +1,12 @@
 'use strict'; {
 
-let watches = [];
+const watches = [];
 
 wgt.watchDom = spec => {
     watches.push(spec);
 };
 
-let watchesFor = (event, el, attrName) => watches.filter(w => {
+const watchesFor = (event, el, attrName) => watches.filter(w => {
     switch(event) {
         case 'attr':
             if(w.attr !== attrName) {
@@ -32,15 +32,15 @@ let watchesFor = (event, el, attrName) => watches.filter(w => {
     return true;
 });
 
-let fire = function(event, el, attrName) {
-    let args = [...arguments].slice(2);
+const fire = function(event, el, attrName) {
+    const args = [...arguments].slice(2);
 
     watchesFor(event, el, attrName).forEach(
         w => w.fn(el, event, ...args)
     );
 };
 
-let observer = new MutationObserver(mutations => mutations.forEach(m => {
+const observer = new MutationObserver(mutations => mutations.forEach(m => {
     m.attributeName && fire('attr', m.target, m.attributeName);
 
     Array.from(m.addedNodes).forEach(el => fire('added', el));

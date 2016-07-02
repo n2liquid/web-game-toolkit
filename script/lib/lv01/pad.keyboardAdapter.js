@@ -1,10 +1,10 @@
 'use strict'; {
 
-let mod = wgt.pad;
+const mod = wgt.pad;
 
-let btnsDown = {};
+const btnsDown = {};
 
-let btnDown = btn => {
+const btnDown = btn => {
     if(btnsDown[btn]) {
         return;
     }
@@ -16,7 +16,7 @@ let btnDown = btn => {
     );
 };
 
-let btnUp = btn => {
+const btnUp = btn => {
     if(!btnsDown[btn]) {
         return;
     }
@@ -29,7 +29,7 @@ let btnUp = btn => {
 };
 
 $(() => {
-    let mappings = {
+    const mappings = {
         37: 'L', 38: 'U',
         39: 'R', 40: 'D',
 
@@ -41,7 +41,7 @@ $(() => {
     };
 
     $('body').on('keydown keyup', ev => {
-        let btn = mappings[ev.which];
+        const btn = mappings[ev.which];
 
         if(!btn) {
             return;

@@ -1,9 +1,9 @@
 'use strict'; {
 
-let mod = wgt.sprite;
+const mod = wgt.sprite;
 
 mod.create = ($parent, ssid, x, y) => {
-    let $el = $('<div>')
+    const $el = $('<div>')
         .addClass('wgtSprite')
         .attr('wgt-spriteset-id', ssid);
 

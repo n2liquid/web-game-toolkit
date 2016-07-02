@@ -6,12 +6,12 @@ wgt.watchDom({
     is: '.wgtTilemap',
 
     fn: (el, ev) => {
-        let $el = $(el);
+        const $el = $(el);
 
-        let tsid = parseInt($el.attr('wgt-tileset-id'));
-        let ts = wgt.db.tileset[tsid];
+        const tsid = parseInt($el.attr('wgt-tileset-id'));
+        const ts = wgt.db.tileset[tsid];
 
-        let tsFileName = wgt.strPad('left', tsid, 4, 0);
+        const tsFileName = wgt.strPad('left', tsid, 4, 0);
 
         wgt.cssVar.set(
             el, 'wgtTilesetUrl', 'url("' +
@@ -29,8 +29,8 @@ wgt.watchDom({
     fn: (el, ev) => {
         let tsUrl = wgt.cssVar.get(el, 'wgtTilesetUrl');
 
-        let bgTsx = wgt.cssVar.get(el, 'wgtBgTilesetX', 'int');
-        let bgTsy = wgt.cssVar.get(el, 'wgtBgTilesetY', 'int');
+        const bgTsx = wgt.cssVar.get(el, 'wgtBgTilesetX', 'int');
+        const bgTsy = wgt.cssVar.get(el, 'wgtBgTilesetY', 'int');
 
         if(
             el.oldTsUrl === tsUrl
@@ -44,16 +44,16 @@ wgt.watchDom({
         el.oldBgTsx = bgTsx;
         el.oldBgTsy = bgTsy;
 
-        let $el = $(el);
-        let $wgt = $el.closest('.wgt');
+        const $el = $(el);
+        const $wgt = $el.closest('.wgt');
 
-        let tw = wgt.cssVar.get($wgt[0], 'wgtTileWidth', 'int');
-        let th = wgt.cssVar.get($wgt[0], 'wgtTileHeight', 'int');
+        const tw = wgt.cssVar.get($wgt[0], 'wgtTileWidth', 'int');
+        const th = wgt.cssVar.get($wgt[0], 'wgtTileHeight', 'int');
 
         tsUrl = wgt.parseCssUrlValue(tsUrl);
 
         wgt.cropTileset(tsUrl, tw, th, bgTsx, bgTsy).then(blob => {
-            let tObjUrl = URL.createObjectURL(blob);
+            const tObjUrl = URL.createObjectURL(blob);
 
             $el.css('background-image', `url("${tObjUrl}")`);
 

@@ -1,14 +1,14 @@
 'use strict'; {
 
-let mod = wgt.cssVar;
+const mod = wgt.cssVar;
 
 mod.setIfUnset = function() {
-    let args = wgt.overloaded(arguments, {
+    const args = wgt.overloaded(arguments, {
         2: ['el', 'hash'],
         3: ['el', 'name', 'val'],
     });
 
-    let el = args.el;
+    const el = args.el;
 
     if(args.hash) {
         Object.keys(args.hash).forEach(
@@ -18,7 +18,7 @@ mod.setIfUnset = function() {
         return;
     }
 
-    let name = args.name;
+    const name = args.name;
 
     if(mod.get(el, name) !== '') {
         return;

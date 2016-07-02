@@ -1,11 +1,11 @@
 'use strict'; {
 
-let mod = wgt.layer;
+const mod = wgt.layer;
 
 mod.create = $parent => {
     $parent = $($parent);
 
-    let $el = $('<div>')
+    const $el = $('<div>')
         .addClass('wgtLayer');
 
     $parent.append($el);

@@ -6,9 +6,9 @@ wgt.watchDom({
     is: '.wgtSprite',
 
     fn: (el, ev) => {
-        let $el = $(el);
+        const $el = $(el);
 
-        let ssid = parseInt($el.attr('wgt-spriteset-id'));
+        const ssid = parseInt($el.attr('wgt-spriteset-id'));
         let ss = wgt.db.spriteset[ssid];
 
         if(!ss) {
@@ -23,7 +23,7 @@ wgt.watchDom({
         }
 
         if(ss.name !== 'null') {
-            let ssFileName = wgt.strPad('left', ssid, 4, 0);
+            const ssFileName = wgt.strPad('left', ssid, 4, 0);
 
             wgt.cssVar.set(
                 el, 'wgtSpritesetUrl', 'url("' +

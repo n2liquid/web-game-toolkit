@@ -1,20 +1,20 @@
 'use strict'; {
 
 wgt.cropTileset = (url, tw, th, x, y) => {
-    let deferred = Q.defer();
+    const deferred = Q.defer();
 
-    let img = new Image();
+    const img = new Image();
 
     img.onload = () => {
-        let canvas = document.createElement('canvas');
+        const canvas = document.createElement('canvas');
 
         canvas.width = tw;
         canvas.height = th;
 
-        let ctx = canvas.getContext('2d');
+        const ctx = canvas.getContext('2d');
 
-        let sx = tw * x;
-        let sy = th * y;
+        const sx = tw * x;
+        const sy = th * y;
 
         ctx.drawImage(img, sx, sy, tw, th, 0, 0, tw, th);
 

@@ -1,9 +1,9 @@
 'use strict'; {
 
-let mod = wgt.tilemap;
+const mod = wgt.tilemap;
 
 mod.createTile = ($parent, tsx, tsy, x, y) => {
-    let $el = $('<div>')
+    const $el = $('<div>')
         .addClass('wgtTile');
 
     wgt.cssVar.set($el[0], {

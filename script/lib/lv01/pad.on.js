@@ -1,6 +1,6 @@
 'use strict'; {
 
-let mod = wgt.pad;
+const mod = wgt.pad;
 
 mod.on = (ev, fn) => {
     mod.evListeners[ev].add(fn);

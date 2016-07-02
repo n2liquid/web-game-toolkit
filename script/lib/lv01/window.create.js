@@ -1,11 +1,11 @@
 'use strict'; {
 
-let mod = wgt.window;
+const mod = wgt.window;
 
 mod.create = $parent => {
     $parent = $($parent);
 
-    let $el = $('<div>')
+    const $el = $('<div>')
         .addClass('wgtWindow');
 
     $parent.append($el);

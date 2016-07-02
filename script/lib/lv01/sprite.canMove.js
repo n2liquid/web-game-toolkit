@@ -1,6 +1,6 @@
 'use strict'; {
 
-let mod = wgt.sprite;
+const mod = wgt.sprite;
 
 mod.canMove = ($el, d) => {
     const [x, y] = wgt.elCoords($el);
