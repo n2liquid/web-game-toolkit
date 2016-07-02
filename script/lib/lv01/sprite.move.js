@@ -4,7 +4,11 @@ const mod = wgt.sprite;
 
 mod.move = ($el, dSeq) => {
     return dSeq.split('').reduce((p, d) => {
-        return p.then(() => {
+        return p.then(moved => {
+            if(!moved) {
+                return;
+            }
+
             const deferred = Q.defer();
 
             if($el.is('.wgtMoving')) {
@@ -29,7 +33,7 @@ mod.move = ($el, dSeq) => {
                     const deferred = $el.data('wgtMoveResult');
                     $el.removeData('wgtMoveResult');
 
-                    deferred.resolve();
+                    deferred.resolve(true);
                 });
 
                 $el.data('wgtMovementSetup', true);
@@ -95,12 +99,12 @@ mod.move = ($el, dSeq) => {
             }
             else {
                 $el.removeClass('wgtAnimate');
-                deferred.resolve();
+                deferred.resolve(false);
             }
 
             return deferred.promise;
         });
-    }, Q.when());
+    }, Q.when(true));
 };
 
 }
