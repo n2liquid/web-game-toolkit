@@ -9,8 +9,8 @@ mod.createTile = ($parent, tsx, tsy, x, y) => {
     wgt.cssVar.set($el[0], {
         wgtTilesetX: tsx,
         wgtTilesetY: tsy,
-        wgtTileX: x,
-        wgtTileY: y,
+        wgtX: x,
+        wgtY: y,
     });
 
     $parent.append($el);

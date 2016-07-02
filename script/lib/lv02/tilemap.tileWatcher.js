@@ -25,11 +25,11 @@ wgt.watchDom({
         let ts = wgt.db.tileset[tsid];
 
         if(ts.highTiles.includes(`${tsx},${tsy}`)) {
-            $el.css('z-index', 'calc(var(--wgtTileY) + 1)');
+            $el.css('z-index', 'calc(var(--wgtY) + 1)');
         }
         else
         if(ts.highTiles.includes(`${tsx},${tsy - 1}`)) {
-            $el.css('z-index', 'var(--wgtTileY)');
+            $el.css('z-index', 'var(--wgtY)');
         }
         else {
             $el.css('z-index', '');

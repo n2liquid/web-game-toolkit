@@ -16,7 +16,7 @@ let X = 'X';
 let LR = 'LR';
 let LRD = 'LRD';
 
-mod.walkBlockages = [
+mod.collisionFlags = [
     [O, LR, LR, LR, LR, X, O, O, X, X, O, O, O, O, O, O, O],
     [LRD, LR, LR, LR, LR, X, O, O, X, X, X, X, X, X, O, O, O],
     [O, O, X, O, X, O, O, X, O, O, O, O, O, O, O, O, O],

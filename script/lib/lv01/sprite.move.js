@@ -1,11 +1,11 @@
 'use strict'; {
 
-let mod = wgt.sprite;
+const mod = wgt.sprite;
 
 mod.move = ($el, dSeq) => {
     return dSeq.split('').reduce((p, d) => {
         return p.then(() => {
-            let deferred = Q.defer();
+            const deferred = Q.defer();
 
             if($el.is('.wgtMoving')) {
                 deferred.reject("Sprite is already moving");
@@ -26,7 +26,7 @@ mod.move = ($el, dSeq) => {
                         );
                     }
 
-                    let deferred = $el.data('wgtMoveResult');
+                    const deferred = $el.data('wgtMoveResult');
                     $el.removeData('wgtMoveResult');
 
                     deferred.resolve();
@@ -35,12 +35,7 @@ mod.move = ($el, dSeq) => {
                 $el.data('wgtMovementSetup', true);
             }
 
-            let x = wgt.cssVar.get($el[0], 'wgtX', 'int');
-            let y = wgt.cssVar.get($el[0], 'wgtY', 'int');
-
-            //let $solids = $el.siblings('.wgtTile, .wgtSolid');
-
-            let shouldMove = true;
+            const shouldMove = mod.canMove($el, d);
 
             if(shouldMove) {
                 $el.addClass('wgtMoving wgtAnimate');
@@ -50,9 +45,12 @@ mod.move = ($el, dSeq) => {
                 }
             }
 
-            function setElCssVar(k, v) {
+            const setElCssVar = (k, v) => {
                 wgt.cssVar.set($el[0], k, v);
-            }
+            };
+
+            const x = wgt.cssVar.get($el[0], 'wgtX', 'int');
+            const y = wgt.cssVar.get($el[0], 'wgtY', 'int');
 
             $el.data('wgtLastMoveDirection', d);
 
@@ -96,6 +94,7 @@ mod.move = ($el, dSeq) => {
                 $el.data('wgtMoveResult', deferred);
             }
             else {
+                $el.removeClass('wgtAnimate');
                 deferred.resolve();
             }
 

@@ -13,8 +13,8 @@
 .wgtTile {
     position: absolute;
 
-    left: calc(var(--wgtTileX) * var(--wgtTileWidth));
-    top: calc(var(--wgtTileY) * var(--wgtTileHeight));
+    left: calc(var(--wgtX) * var(--wgtTileWidth));
+    top: calc(var(--wgtY) * var(--wgtTileHeight));
 
     width: var(--wgtTileWidth);
     height: var(--wgtTileHeight);
