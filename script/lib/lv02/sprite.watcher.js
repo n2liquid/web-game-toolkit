@@ -47,7 +47,7 @@ wgt.watchDom({
                 wgtSpritesetRow: 0,
 
                 wgtSpritesetAnimDuration: ss.defaultAnimDuration || '0.7s',
-                wgtWalkDuration: ss.defaultWalkDuration || '0.5s',
+                wgtMoveDuration: ss.defaultWalkDuration || '0.5s',
             });
         }
 

@@ -2,18 +2,29 @@
 
 let mod = wgt.cssVar;
 
-mod.setIfUnset = (el, name, type) => {
-    let val = el.style.getPropertyValue(`--${name}`);
+mod.setIfUnset = function() {
+    let args = wgt.overloaded(arguments, {
+        2: ['el', 'hash'],
+        3: ['el', 'name', 'val'],
+    });
 
-    switch(type) {
-        case 'int': val = parseInt(val); break;
-        case 'float': val = parseFloat(val); break;
-        case undefined: break;
+    let el = args.el;
 
-        default: throw new Error(`Invalid type: ${type}`);
+    if(args.hash) {
+        Object.keys(args.hash).forEach(
+            k => mod.setIfUnset(el, k, args.hash[k])
+        );
+
+        return;
     }
 
-    return val;
+    let name = args.name;
+
+    if(mod.get(el, name) !== '') {
+        return;
+    }
+
+    mod.set(el, name, args.val);
 };
 
 }

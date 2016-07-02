@@ -44,6 +44,6 @@
     );
 }
 
-.wgtSprite.wgtWalking {
-    transition: var(--wgtWalkDuration) linear left, var(--wgtWalkDuration) linear top;
+.wgtSprite.wgtMoving {
+    transition: var(--wgtMoveDuration) linear left, var(--wgtMoveDuration) linear top;
 }
