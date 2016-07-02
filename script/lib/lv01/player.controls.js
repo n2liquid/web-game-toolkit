@@ -1,8 +1,6 @@
 'use strict'; {
 
-const playerDirections = {
-    0: 'none',
-};
+const playerDirections = {};
 
 $(() => {
     wgt.pad.on('btnUp', (btn, i) => {
@@ -32,7 +30,7 @@ $(() => {
             return;
         }
 
-        const d = playerDirections[k];
+        const d = playerDirections[k] || 'none';
 
         if(
             d === 'none'
