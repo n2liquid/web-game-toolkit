@@ -12,7 +12,7 @@ let btnDown = btn => {
     btnsDown[btn] = true;
 
     Array.from(mod.evListeners.btnDown.values()).forEach(
-        fn => fn(btn)
+        fn => fn(btn, 0)
     );
 };
 
@@ -24,7 +24,7 @@ let btnUp = btn => {
     btnsDown[btn] = false;
 
     Array.from(mod.evListeners.btnUp.values()).forEach(
-        fn => fn(btn)
+        fn => fn(btn, 0)
     );
 };
 

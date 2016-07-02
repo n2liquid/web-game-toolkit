@@ -1,46 +1,55 @@
 'use strict'; {
 
-let direction = 'none';
+let playerDirections = {
+    0: 'none',
+};
 
 $(() => {
-    wgt.pad.on('btnUp', btn => {
-        if(direction !== btn) {
+    wgt.pad.on('btnUp', (btn, i) => {
+        if(playerDirections[i] !== btn) {
             return;
         }
 
-        direction = 'none';
+        playerDirections[i] = 'none';
     });
 
-    wgt.pad.on('btnDown', btn => {
+    wgt.pad.on('btnDown', (btn, i) => {
         if(!'LURD'.includes(btn)) {
             return;
         }
 
-        direction = btn;
+        playerDirections[i] = btn;
     });
 });
 
 (function thisFn() {
     requestAnimationFrame(thisFn);
 
-    let $el = $('.wgtPlayer');
+    Object.keys(playerDirections).forEach(k => {
+        const $el = $(`[wgt-player="${k}"]`).first();
 
-    if($el.closest('.wgtHoldControls').length !== 0) {
-        return;
-    }
+        if($el.length === 0) {
+            return;
+        }
 
-    if(direction === 'none') {
-        $el.removeClass('wgtEnRoute');
-        return;
-    }
+        const d = playerDirections[k];
 
-    if($el.is('.wgtMoving')) {
-        return;
-    }
+        if(
+            d === 'none'
+            || $el.closest('.wgtHoldControls').length !== 0
+        ) {
+            $el.removeClass('wgtEnRoute');
+            return;
+        }
 
-    $el.addClass('wgtEnRoute');
+        if($el.is('.wgtMoving')) {
+            return;
+        }
 
-    wgt.sprite.move($el, direction);
+        $el.addClass('wgtEnRoute');
+
+        wgt.sprite.move($el, d);
+    });
 })();
 
 }

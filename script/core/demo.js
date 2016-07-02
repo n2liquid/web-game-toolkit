@@ -24,7 +24,7 @@ wgt.tilemap.createTile($tilemap, 8, 3, 5, 2);
 wgt.tilemap.createTile($tilemap, 9, 3, 6, 2);
 
 wgt.sprite.create($tilemap, 1, 2, 4)
-    .addClass('wgtPlayer');
+    .attr('wgt-player', 0);
 
 wgt.sprite.create($tilemap, 2, 6, 4);
 
