@@ -26,7 +26,7 @@ wgt.tilemap.createTile($tilemap, 8, 3, 5, 2);
 wgt.tilemap.createTile($tilemap, 9, 3, 6, 2);
 
 const evSiren = wgt.event.create({
-    id: 1,
+    name: 'Siren',
 
     initialParent: $tilemap,
     initialPos: [6, 4],

@@ -33,7 +33,7 @@ mod.update = ev => {
             ev.initialPos[1]
         );
 
-        ev.$spr.attr('wgt-ev', ev.id);
+        ev.$spr.addClass(`wgtEv${ev.name}`);
     }
 
     if(!currentPage.spritesetId && currentPage.tsCoords) {

@@ -3,11 +3,11 @@
 const mod = wgt.event;
 
 mod.create = ev => {
-    if(!ev.id) {
-        throw new Error("Missing event ID");
+    if(mod.active[ev.name]) {
+        throw new Error(`Event with name [${ev.name}] already exists`);
     }
 
-    mod.active[ev.id] = ev;
+    mod.active[ev.name] = ev;
 
     mod.update(ev);
 
