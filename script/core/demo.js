@@ -61,6 +61,10 @@ const $transLayer = wgt.layer.create($wgt)
     .css('z-index', 1000)
     .addClass('transLayer');
 
-wgt.cssAnim.add($transLayer, 'wgtSquareFadeIn');
+$wgt.addClass('wgtHoldControls');
+
+wgt.cssAnim.add($transLayer, 'wgtSquareFadeIn').then(() => {
+    $wgt.removeClass('wgtHoldControls');
+});
 
 }
