@@ -2,7 +2,9 @@
 
 const mod = wgt.sprite;
 
-mod.create = ($parent, ssid, x, y) => {
+mod.create = (parent, ssid, x, y) => {
+    const $parent = $(parent);
+
     const $el = $('<div>')
         .addClass('wgtSprite')
         .attr('wgt-spriteset-id', ssid);

@@ -33,7 +33,6 @@
 
         const vpWidth = $vp.width();
         const vpHeight = $vp.height();
-        function tap(v) { console.log(v); return v; }
 
         const shouldScroll = {
             left: () => tx < $vp.scrollLeft() + vpPadding,
@@ -51,7 +50,7 @@
         );
 
         if(shouldScroll.left()) {
-            $vp.scrollLeft(tap(tx - vpPadding));
+            $vp.scrollLeft(tx - vpPadding);
 
             if(shouldScroll.right()) {
                 scrollCenterX();
@@ -59,7 +58,7 @@
         }
         else
         if(shouldScroll.right()) {
-            $vp.scrollLeft(tap(tx - vpWidth + tw + vpPadding));
+            $vp.scrollLeft(tx - vpWidth + tw + vpPadding);
 
             if(shouldScroll.left()) {
                 scrollCenterX();

@@ -25,11 +25,23 @@ wgt.tilemap.createTile($tilemap, 9, 2, 6, 1);
 wgt.tilemap.createTile($tilemap, 8, 3, 5, 2);
 wgt.tilemap.createTile($tilemap, 9, 3, 6, 2);
 
+const evSiren = wgt.event.create({
+    id: 1,
+
+    initialParent: $tilemap,
+    initialPos: [6, 4],
+
+    pages: [
+        {
+            name: 'default',
+            spritesetId: 2,
+        }
+    ],
+});
+
 wgt.sprite.create($tilemap, 1, 2, 4)
     .attr('wgt-player', 0)
     .addClass('wgtViewportTarget');
-
-wgt.sprite.create($tilemap, 2, 6, 4);
 
 const $uiLayer = wgt.layer.create($wgt)
     .addClass('uiLayer');
