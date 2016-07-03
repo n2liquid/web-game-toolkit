@@ -35,4 +35,10 @@ wgt.window.create($uiLayer)
     .addClass('wgtTopRightWindow')
     .text('ＤＥＭＯ');
 
+const $transLayer = wgt.layer.create($wgt)
+    .css('z-index', 1000)
+    .addClass('transLayer');
+
+wgt.cssAnim.add($transLayer, 'wgtSquareFadeIn');
+
 }
