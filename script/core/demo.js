@@ -34,7 +34,14 @@ const evSiren = wgt.event.create({
     pages: [
         {
             name: 'default',
+
             spritesetId: 2,
+
+            trigger: 'action',
+
+            exec: ev => {
+                return wgt.cssAnim.add(ev.$spr, 'flip');
+            },
         }
     ],
 });
