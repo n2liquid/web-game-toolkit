@@ -1,9 +1,4 @@
 .wgtTilemap {
-    position: absolute;
-
-    left: 0;
-    top: 0;
-
     width: calc(var(--wgtTilemapWidth) * var(--wgtTileWidth));
     height: calc(var(--wgtTilemapHeight) * var(--wgtTileHeight));
 

@@ -6,6 +6,8 @@ const $mapLayer = wgt.layer.create($wgt)
     .addClass('mapLayer')
     .css('zoom', 2);
 
+wgt.viewport.set($mapLayer);
+
 const $tilemap = wgt.tilemap.create($mapLayer, 30, 25, 1);
 
 wgt.cssVar.set($tilemap[0], {
@@ -24,7 +26,8 @@ wgt.tilemap.createTile($tilemap, 8, 3, 5, 2);
 wgt.tilemap.createTile($tilemap, 9, 3, 6, 2);
 
 wgt.sprite.create($tilemap, 1, 2, 4)
-    .attr('wgt-player', 0);
+    .attr('wgt-player', 0)
+    .addClass('wgtViewportTarget');
 
 wgt.sprite.create($tilemap, 2, 6, 4);
 
